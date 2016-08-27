@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8 />
+        <title>Problem 2 : Ordering</title>
+        <link href="css/reset.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+
+    </head>
+    <body>
+      <div class="wrapper">
+        <div id="customers"></div>
+        <div class="basket-wrapper">
+          <div id="products"></div>
+          <div id="basket"></div>
+        </div>
+        <div class="comments">
+          <p>Comments:</p>
+          <ul>
+            <li>I wasn't sure about the best visual approach</li>
+            <li>I could delete items one by one but I just decided to delete all of them with one click</li>
+            <li>After success or error, you will need to reload</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal_view hidden">
+        <div class="order_ok order-msg hidden">You order will send to you as soon as possible.</div>
+        <div class="order_ko order-msg hidden">We are very sorry. Something wrong happened.</div>
+      </div>
+
+
+      <script type="text/template" id="basketTemplate">
+        <div class="products_wrapper">
+          <div class="pTable products_list">
+            <div class="pRow">
+              <div class="pCell">id</div>
+              <div class="pCell">description</div>
+              <div class="pCell">category</div>
+              <div class="pCell">price</div>
+              <div class="pCell">quantity</div>
+              <div class="pCell">subtotal</div>
+              <div class="pCell"></div>
+            </div>
+            <% _.each(basket, function(item) { %>
+              <div class="pRow">
+                <div class="pCell"><% print(item.id); %></div>
+                <div class="pCell"><% print(item.description); %></div>
+                <div class="pCell"><% print(item.category); %></div>
+                <div class="pCell"><% print(item.price); %></div>
+                <div class="pCell"><% print(item.quantity); %></div>
+                <div class="pCell"><% print(item.total); %></div>
+                <div class="pCell action-btn">
+                  <button class="del_item" data-id="<% print(item.id); %>">X</button>
+                </div>
+              </div>
+            <% }); %>
+          </div>
+          <p class="total-price">Total: <% print(Math.floor(total*100)/100); %></p>
+          <div class="action-btn"><button class="buy_now">Buy now</button><span class="customer_error error hidden">Please select a customer</span></div>
+        </div>
+      </script>
+
+      <script type="text/template" id="customersTemplate">
+        <div class="customerList-wrapper">
+          <label for="customersList" class="customer_list">Choose the customer: </label>
+          <select name="customersList" id="customersList">
+            <option value="Select the customer" data-index="-1" data-clientId="-1">Select the customer</option>
+            <% _.each(customers, function(customer,index) { %>
+              <option value="<% print(customer.name); %>" data-index="<% print(index); %>"><% print(customer.name); %></option>
+            <% }); %>
+          </select>
+        </div>
+      </script>
+
+      <script type="text/template" id="productsTemplate">
+        <div class="productsList-wrapper">
+          <label for="productsList">Product items: </label>
+          <select name="productsList" id="productsList">
+            <% _.each(products, function(product,index) { %>
+              <option value="<% print(product.description); %>" data-id="<% print(index); %>" data-pId="<% print(product.id); %>"><% print(product.description); %></option>
+            <% }); %>
+          </select>
+          <p class="action-btn"><button class="add_item">Add item</button></p>
+        </div>
+      </script>
+    </body>
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min.js"></script>
+    <script src="js/app.js"></script>
+</html>

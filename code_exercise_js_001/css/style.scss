@@ -1,0 +1,82 @@
+$grey: #ccc;
+$darkGrey: #555;
+$red: #f00;
+$white: #fff;
+body {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 14px;
+}
+.wrapper {
+  padding: 20px;
+}
+.customerList-wrapper {
+  padding-bottom: 10px;
+}
+.hidden {
+  display: none;
+}
+.action-btn {
+  padding-top: 10px;
+  span {
+    padding-left: 10px;
+    font-size: 12px;
+  }
+}
+.pTable {
+  margin-top: 15px;
+  display: table;
+  width: 100%;
+}
+.pRow {
+  display: table-row;
+}
+.pCell {
+  display: table-cell;
+  width: 16%;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid $grey;
+  padding: 5px 0;
+  &.action-btn {
+    width: 10%;
+    text-align: right;
+  }
+}
+.comments {
+  margin-top: 15px;
+  border-top: 1px solid $grey;
+  padding-top: 15px;
+  ul {
+    color: $darkGrey;
+    font-size: 12px;
+    list-style-type: circle;
+    list-style-position: inside;
+    li {
+      margin-top: 5px;
+    }
+  }
+  p {
+    font-weight: bold;
+  }
+}
+.error {
+  color: $red;
+}
+.total-price {
+  margin-top: 15px;
+}
+.modal_view {
+  position: absolute;
+  background: rgba(0,0,0,0.8);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  .order-msg {
+    padding: 50px 20px;
+    margin: 100px auto 0 auto;
+    width: 400px;
+    background: $white;
+    text-align: center;
+  }
+}
