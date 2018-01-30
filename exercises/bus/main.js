@@ -1,7 +1,3 @@
-// Id de cliente: WEB.SERV.noemims@gmail.com
-// Pass Key: B434D627-6F9A-4C54-BEF1-86DA45ECAE1C
-// https://servicios.emtmadrid.es:8443/
-
 var getIncomingBusesToStopUrl = 'https://openbus.emtmadrid.es/emt-proxy-server/last/geo/GetArriveStop.php';
 var server = 'https://servicios.emtmadrid.es:8443/';
 var data = {
