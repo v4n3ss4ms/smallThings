@@ -43,6 +43,7 @@ function getInfo(data) {
 }
 
 getInfo(sendData).then((response) => responseData = response);
+console.log(responseData);
 
 
 
