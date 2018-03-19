@@ -43,9 +43,6 @@ function getInfo(data) {
 }
 
 getInfo(sendData).then((response) => responseData = response);
-console.log(responseData);
-
-
 
 // saving response #1
 // var getInfo = $.ajax({
