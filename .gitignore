@@ -1,4 +1,9 @@
-bus/_config.js
-pokemon/pokemonsv2/node_modules
+.gitignore
+**/.DS_Store
+**/.idea
+**/.vscode
+.DS_Store
 .idea
 .vscode
+bus/_config.js
+pokemon/pokemonsv2/node_modules
