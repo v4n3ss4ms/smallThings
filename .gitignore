@@ -1,9 +1,7 @@
 .gitignore
-**/.DS_Store
-**/.idea
-**/.vscode
-.DS_Store
 .idea
 .vscode
+node_modules/
 bus/_config.js
-pokemon/pokemonsv2/node_modules
+.DS_Store
+*.DS_Store
