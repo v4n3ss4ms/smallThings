@@ -1,20 +1,22 @@
 
-var server = 'https://servicios.emtmadrid.es:8443/'; //info web
-var server = 'https://openbus.emtmadrid.es:9443/emt-proxy-server/last/ '; //API doc
+var serverWeb = 'https://servicios.emtmadrid.es:8443/'; //info web
+var serverAPI = 'https://openbus.emtmadrid.es:9443/emt-proxy-server/last/ '; //API doc
+var urlServer= serverAPI;
+
 var data = {
     'idClient': idClient,
     'passKey': passKey,
-    'latitude': '40.439755831562',
-    'longitude': '-3.6142271125227',
-    'Radius':'500',
-    'url': 'https://openbus.emtmadrid.es:9443/emt-proxy-server/last/geo/GetStopsFromXY.php'
+    'idStop': '2491',
+    'url': urlServer + '/geo/GetArriveStop.php' //Gets bus arrive info to a target stop
 };
 
 var data2 = {
     'idClient': idClient,
     'passKey': passKey,
-    'idStop': '2491',
-    'url':'https://openbus.emtmadrid.es:9443/emt-proxy-server/last/geo/GetArriveStop.php'
+    'latitude': '40.439755831562',
+    'longitude': '-3.6142271125227',
+    'Radius':'500',
+    'url': urlServer + '/geo/GetStopsFromXY.php' //Returns a list of stops from a coordinate with a radius and the lines arriving to those stops
 };
 
 var data3 = {
@@ -22,10 +24,10 @@ var data3 = {
     'passKey': passKey,
     'idStop': '4423',
     'Radius':'500',
-    'url':'https://openbus.emtmadrid.es:9443/emt-proxy-server/last/geo/GetStopsFromStop.php'
+    'url': urlServer + '/geo/GetStopsFromStop.php' //Returns a list of stops from a target stop with a target radius and the lines arriving to those stops.
 };
 
-var sendData = data2;
+var sendData = data;
 
 var responseData;
 
@@ -43,6 +45,7 @@ function getInfo(data) {
 }
 
 getInfo(sendData).then((response) => responseData = response);
+
 
 // saving response #1
 // var getInfo = $.ajax({
