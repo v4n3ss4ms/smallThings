@@ -1,0 +1,11 @@
+.footer {
+    grid-area: footer;
+    background: $c-secondary;
+    font-family: $f-secondary;
+    color: $c-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    height: 70px;
+}

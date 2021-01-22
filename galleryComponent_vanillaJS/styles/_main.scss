@@ -1,0 +1,25 @@
+.main {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "content aside";
+    padding: 40px;
+    @media (max-width:768px) {
+        padding: 0;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "content"
+        "aside";
+    }
+
+    &-content {
+        grid-area: content;
+        background: $c-white;
+        border-radius: 4px;
+        padding: 40px;
+
+        &__title {
+            @include title-main;
+        }
+    }
+}

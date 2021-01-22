@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: $c-grey;
+    font-family: $f-primary;
+}
+
+a {
+    color: $c-white;
+}
+  
+  
+//Gallery component styles overrided
+
+.show-more {
+    font-family: $f-primary;
+    background-color: $c-primary;
+    border: 0;
+    box-shadow: 0;
+    border-radius: 4px;
+    color: $c-white;
+}

@@ -1,0 +1,151 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto:wght@400;700&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: #f2f2f2;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  color: #fff;
+}
+
+.show-more {
+  font-family: "Roboto", sans-serif;
+  background-color: #f85453;
+  border: 0;
+  box-shadow: 0;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.header {
+  background: #f85453;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 50px;
+  margin-bottom: 30px;
+  grid-area: header;
+}
+
+.footer {
+  grid-area: footer;
+  background: #424242;
+  font-family: "Inconsolata", monospace;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  height: 70px;
+}
+
+.main {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "content aside";
+  padding: 40px;
+}
+@media (max-width: 768px) {
+  .main {
+    padding: 0;
+    grid-template-columns: 1fr;
+    grid-template-areas: "content" "aside";
+  }
+}
+.main-content {
+  grid-area: content;
+  background: #fff;
+  border-radius: 4px;
+  padding: 40px;
+}
+.main-content__title {
+  font-family: "Inconsolata", monospace;
+  font-size: 30px;
+  color: #424242;
+  margin-bottom: 30px;
+}
+
+.main-aside {
+  grid-area: aside;
+  background: #fff;
+  border-radius: 4px;
+  padding: 40px;
+}
+.main-aside__title {
+  font-family: "Inconsolata", monospace;
+  font-size: 30px;
+  color: #424242;
+  margin-bottom: 30px;
+}
+.main-aside a {
+  color: #424242;
+}
+
+.list-aside__item {
+  padding: 10px 0;
+}
+
+/*# sourceMappingURL=styles.css.map */
